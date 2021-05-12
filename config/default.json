@@ -1,0 +1,11 @@
+{
+    "mysql": {
+        "database": "vidroFerro",
+        "user": "root",
+        "pass": "Uphard123@root",
+        "host": "127.0.0.1"
+    },
+    "api": {
+        "port": 3000
+    }
+}
