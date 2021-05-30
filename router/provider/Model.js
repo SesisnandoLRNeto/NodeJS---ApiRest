@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 const connection = require('../../db')
 
 const columns = {
-    material: {
+    name: {
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -10,36 +10,23 @@ const columns = {
         type: Sequelize.STRING,
         allowNull: false
     },
-    quantity: {
+    cellPhone: {
         type: Sequelize.INTEGER,
         allowNull: false,
         defaultValue: 0
     },
-    type: {
-        type: Sequelize.ENUM('vidro', 'ferro', 'aluminio'),
+    address: {
+        type: Sequelize.TEXT,
         allowNull: false
-    },
-    price: {
-        type: Sequelize.DOUBLE,
-        allowNull: false,
-        defaultValue: 0
-    },
-    // provider_id: {
-    //     type: Sequelize.INTEGER,
-    //     allowNull: false,
-    //     references: {
-    //         model: require('../provider'),
-    //         key: id
-    //     }
-    // }
+    }
 }
 const options = {
     freezeName: true,
-    tableName: 'materials',
+    tableName: 'providers',
     timestamps: true,
     createdAt: 'date_created',
     updatedAt: 'date_updated',
     version: 'version'
 }
 
-module.exports = connection.define('material', columns, options)
+module.exports = connection.define('provider', columns, options)

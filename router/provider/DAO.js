@@ -1,17 +1,17 @@
-const ModelMaterial = require('./Model')
+const ModelProvider = require('./Model')
 const NotFound = require('../../errors/NotFound')
 
 module.exports = {
     listAll() {
-        return ModelMaterial.findAll({ raw: true }) //to catch raw datas of database
+        return ModelProvider.findAll({ raw: true }) //to catch raw datas of database
     },
 
     insert(material) {
-        return ModelMaterial.create(material)
+        return ModelProvider.create(material)
     },
 
     async findById(id) {
-        const findRegister = await ModelMaterial.findOne({
+        const findRegister = await ModelProvider.findOne({
             where: { id: id }
         })
 
@@ -20,13 +20,13 @@ module.exports = {
     },
 
     updateRegister(id, dataUpdated) {
-        ModelMaterial.update(dataUpdated, {
+        ModelProvider.update(dataUpdated, {
             where: { id: id }
         })
     },
 
     delete(id) {
-        ModelMaterial.destroy({
+        ModelProvider.destroy({
             where: { id: id }
         })
     }
